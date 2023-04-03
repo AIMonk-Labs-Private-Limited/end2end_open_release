@@ -54,13 +54,13 @@ Running inference on a single image or directory containing multiple images. Thi
   - `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /PATH/TO/SAVE/detector_model.pt --ocr_model /PATH/TO/SAVE/english_model/saved_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
 * **Running the End to End on CPU for Windows**
   - `set CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /PATH/TO/SAVE/detector_model.pt --ocr_model /PATH/TO/SAVE/english_model/saved_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
-  - For Example: `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=-1 --show_time`
+* For Example: `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=-1 --show_time`
    
 * **Running the End to End on GPU for Linux**
   - `CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/detector_model.pt --ocr_model /Path/to/english_model/temp_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`
 * **Running the End to End on GPU for Windows**
   - `set CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/detector_model.pt --ocr_model /Path/to/english_model/temp_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`  
-  - For example: `CUDA_VISIBLE_DEVICES=0 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=0 --show_time`
+* For example: `CUDA_VISIBLE_DEVICES=0 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=0 --show_time`
 
 ## Understanding End to End model
 
