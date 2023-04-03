@@ -17,13 +17,13 @@ Then you need to install `git`. You can use following way since you already have
    `conda install -c anaconda git`
 
 ### Extraction:
-Extract the checkpoint tar file “detector_model.tar.gz” “ocr_model.tar.gz” at a location. Extraction can be done from command prompt using the following command
+Extract the checkpoint tar file “detector_model.tar.gz” “recognition_model.tar.gz” at a location. Extraction can be done from command prompt using the following command
 
    `tar xzf \PATH\TO\detector_model.tar.gz -C \PATH\TO\SAVE\`  
-   `tar xzf \PATH\TO\ocr_model.tar.gz -C \PATH\TO\SAVE\` 
+   `tar xzf \PATH\TO\recognition_model.tar.gz -C \PATH\TO\SAVE\` 
 
 where `\PATH\TO\SAVE\` is the location of where you want to save these mdoels. For “detector_model.tar.gz”, after extracting, you will 
-find a “detector_model” folder, in which you will find “detector_small.pt”. For “ocr_model.tar.gz”, after extracting, you will find “english_model/checkpoint” directory, in which you will have the saved checkpoints of pretrained model. 
+find a “detector_model” folder, in which you will find “detector_small.pt”. For “recognition_model.tar.gz”, after extracting, you will find “english_model/checkpoint” directory, in which you will have the saved checkpoints of pretrained model. 
 
 ### Cloning:
 Now you can copy this repository URL and perform cloning. Before that change your directory to a new folder.
@@ -51,16 +51,16 @@ Running inference on a single image or directory containing multiple images. Thi
 
 ### Steps to Execute
 * **Running the End to End on CPU for Linux**
-  - `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /PATH/TO/SAVE/detector_model.pt --ocr_model /PATH/TO/SAVE/english_model/saved_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
+  - `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /Path/to/Saved/.pt_file --recognition_model /PATH/TO/SAVE/english_model/checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
 * **Running the End to End on CPU for Windows**
-  - `set CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /PATH/TO/SAVE/detector_model.pt --ocr_model /PATH/TO/SAVE/english_model/saved_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
-* For Example: `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=-1 --show_time`
+  - `set CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model /Path/to/Saved/.pt_file --recognition_model /PATH/TO/SAVE/english_model/checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops --gpu_id=-1 --show_time`
+* For Example: `CUDA_VISIBLE_DEVICES=-1 python inference.py --detection_model ./detector_model/detector_small.pt --recognition_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=-1 --show_time`
    
 * **Running the End to End on GPU for Linux**
-  - `CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/detector_model.pt --ocr_model /Path/to/english_model/temp_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`
+  - `CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/Saved/.pt_file --recognition_model /Path/to/english_model/checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`
 * **Running the End to End on GPU for Windows**
-  - `set CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/detector_model.pt --ocr_model /Path/to/english_model/temp_checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`  
-* For example: `CUDA_VISIBLE_DEVICES=0 python inference.py --detection_model ./detector_model/detector_model.pt --ocr_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=0 --show_time`
+  - `set CUDA_VISIBLE_DEVICES=GPU_ID python inference.py --detection_model /Path/to/Saved/.pt_file --recognition_model /Path/to/english_model/checkpoint --input_dir /Path/to/dir/input_images --output_dir /Path/to/Saving/crops_and_predicted_text --gpu_id=GPU_ID --show_time`  
+* For example: `CUDA_VISIBLE_DEVICES=0 python inference.py --detection_model ./detector_model/detector_small.pt --recognition_model ./english_model/checkpoint --input_dir ./test_set/ --output_dir ./result_test_set --gpu_id=0 --show_time`
 
 ## Understanding End to End model
 
